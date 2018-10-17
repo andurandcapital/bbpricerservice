@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Pricing" Class="PricingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ANDC1SQL01;Initial Catalog=Pricing;Integrated Security=True" SettingsObjectName="BloombergPricerService.Properties.Settings" SettingsPropertyName="PricingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BBHistoricalPrices" Member="BBHistoricalPrices">
+    <Type Name="BBHistoricalPrice">
+      <Column Name="PriceDate" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UpdateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BBTicker" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BB" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdatedBy" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Last" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="High" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Low" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="[Open]" Member="Open" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Open_Int" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Volume" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PX_DISC_BID" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BBHistoricalRequest" Member="BBHistoricalRequests">
+    <Type Name="BBHistoricalRequest">
+      <Column Name="RequestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BB" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ticker" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DataService" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Fields" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Datapoints" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BarInterval" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HostReserved" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Completed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Error" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ErrorCategory" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="ErrorSubcategory" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HostAssignedAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BBPricerHosts" Member="BBPricerHosts">
+    <Type Name="BBPricerHost">
+      <Column Name="HostName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PowerSwitch" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Heartbeat" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BBReferenceData" Member="BBReferenceDatas">
+    <Type Name="BBReferenceData">
+      <Column Name="BBTicker" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BB" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdatedBy" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="FUT_NOTICE_FIRST" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FUT_LAST_TRADE_DT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VwBloombergPointsUsed" Member="VwBloombergPointsUseds">
+    <Type Name="VwBloombergPointsUsed">
+      <Column Name="Rundate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="PointsUsed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BBIntradayBarPrices" Member="BBIntradayBarPrices">
+    <Type Name="BBIntradayBarPrice">
+      <Column Name="PriceDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="PriceTime" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UpdateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BBTicker" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BB" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdatedBy" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="[Open]" Member="Open" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="High" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Low" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="[Close]" Member="Close" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="NumEvents" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Volume" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BBPriceRequestQueue" Member="BBPriceRequestQueues">
+    <Type Name="BBPriceRequestQueue">
+      <Column Name="RequestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HostReserved" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="BBTicker" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ServiceType" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Fields" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="RequestTS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spBloombergPointsUsedUpdate" Method="spBloombergPointsUsedUpdate">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="newPointsUsed" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spBloombergPointsUsedUpdateResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spInsertUpdateBBHistoricalPrice" Method="spInsertUpdateBBHistoricalPrice">
+    <Parameter Name="PriceDate" Parameter="priceDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="BBTicker" Parameter="bBTicker" Type="System.String" DbType="VarChar(64)" />
+    <Parameter Name="BB" Parameter="bB" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="LastUpdatedBy" Parameter="lastUpdatedBy" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="Last" Parameter="last" Type="System.Decimal" DbType="Decimal(18,6)" />
+    <Parameter Name="High" Parameter="high" Type="System.Decimal" DbType="Decimal(18,6)" />
+    <Parameter Name="Low" Parameter="low" Type="System.Decimal" DbType="Decimal(18,6)" />
+    <Parameter Name="Open" Parameter="open" Type="System.Decimal" DbType="Decimal(18,6)" />
+    <Parameter Name="Open_Int" Parameter="open_Int" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Volume" Parameter="volume" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="PX_DISC_BID" Parameter="pX_DISC_BID" Type="System.Decimal" DbType="Decimal(18,6)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spInsertUpdateBBIntradayBarPrice" Method="spInsertUpdateBBIntradayBarPrice">
+    <Parameter Name="PriceDate" Parameter="priceDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PriceTime" Parameter="priceTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="BBTicker" Parameter="bBTicker" Type="System.String" DbType="VarChar(64)" />
+    <Parameter Name="BB" Parameter="bB" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="LastUpdatedBy" Parameter="lastUpdatedBy" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="Open" Parameter="open" Type="System.Decimal" DbType="Decimal(18,6)" />
+    <Parameter Name="High" Parameter="high" Type="System.Decimal" DbType="Decimal(18,6)" />
+    <Parameter Name="Low" Parameter="low" Type="System.Decimal" DbType="Decimal(18,6)" />
+    <Parameter Name="Close" Parameter="close" Type="System.Decimal" DbType="Decimal(18,6)" />
+    <Parameter Name="NumEvents" Parameter="numEvents" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Volume" Parameter="volume" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spInsertUpdateStaticData" Method="spInsertUpdateStaticData">
+    <Parameter Name="BBTicker" Parameter="bBTicker" Type="System.String" DbType="VarChar(64)" />
+    <Parameter Name="BB" Parameter="bB" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="LastUpdatedBy" Parameter="lastUpdatedBy" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="FUT_NOTICE_FIRST" Parameter="fUT_NOTICE_FIRST" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FUT_LAST_TRADE_DT" Parameter="fUT_LAST_TRADE_DT" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

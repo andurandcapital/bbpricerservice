@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.5" name="Pricing">
+  <DataContextMoniker Name="/PricingDataContext" />
+  <nestedChildShapes>
+    <classShape Id="81beaf48-9c46-4ebb-910c-acda75d2992b" absoluteBounds="1.25, 1.375, 2, 3.1170068359375">
+      <DataClassMoniker Name="/PricingDataContext/BBHistoricalPrice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f85e2110-ce9a-4bea-8424-f87056d15dc3" absoluteBounds="1.2650000000000001, 1.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34c73ebb-23df-46a0-850d-af930de0db7d" absoluteBounds="3.75, 1.5, 2, 4.2708154296875">
+      <DataClassMoniker Name="/PricingDataContext/BBHistoricalRequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c02430f0-c0f6-4359-9429-7244725979db" absoluteBounds="3.765, 1.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8e842cd-1196-444e-b5fd-96911f0ff57b" absoluteBounds="1.375, 5.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PricingDataContext/BBPricerHost" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54b4c7af-5fe3-406d-aaa9-604bc18efea5" absoluteBounds="1.3900000000000001, 5.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="50ecd65c-260b-48b3-a5b8-e0b6e9a36843" absoluteBounds="3.75, 6, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PricingDataContext/BBReferenceData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c854a01-92e3-4434-842d-159553584040" absoluteBounds="3.765, 6.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f4e9f37-e720-4ae9-b2ec-a2c40754cb13" absoluteBounds="1, 7.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PricingDataContext/VwBloombergPointsUsed" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4ba3466-61bb-4978-bb43-cad9dcaad795" absoluteBounds="1.0150000000000001, 8.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="db805c32-c76a-4281-988a-113d60551529" absoluteBounds="3.625, 8.5, 2, 3.1170068359375">
+      <DataClassMoniker Name="/PricingDataContext/BBIntradayBarPrice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="601c87a1-196d-4da1-9e2f-a4cbb7f815ef" absoluteBounds="3.6400000000000006, 8.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cfa8c2cb-aeb5-407c-bf78-9dda5bd3d540" absoluteBounds="1.25, 10.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PricingDataContext/BBPriceRequestQueue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7dbf675d-15b9-4b87-9b37-0291bcb28612" absoluteBounds="1.2650000000000001, 10.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
